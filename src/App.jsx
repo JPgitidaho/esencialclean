@@ -5,18 +5,30 @@ import WhatsAppButton from './components/layout/WhatsAppButton'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import About from './pages/About'
+import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
+import Sillones from './pages/Sillones'
+import Colchones from './pages/Colchones'
+import Alfombras from './pages/Alfombras'
+import SillasTapices from './pages/SillasTapices'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/servicios" element={<Services />} />
-        <Route path="/nosotros" element={<About />} />
-        <Route path="/contacto" element={<Contact />} />
-      </Routes>
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/servicios" element={<Services />} />
+          <Route path="/limpieza-de-sillones" element={<Sillones />} />
+          <Route path="/limpieza-de-colchones" element={<Colchones />} />
+          <Route path="/limpieza-de-alfombras" element={<Alfombras />} />
+          <Route path="/limpieza-de-sillas-y-tapices" element={<SillasTapices />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/preguntas-frecuentes" element={<FAQ />} />
+          <Route path="/contacto" element={<Contact />} />
+        </Routes>
+      </main>
       <WhatsAppButton />
       <Footer />
     </div>

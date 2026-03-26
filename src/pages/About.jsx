@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { professionalEquipmentImage, equipmentImageVariants } from '../assets/images'
+import { equipmentImageVariants } from '../assets/images'
 
 export default function About() {
   const values = [
@@ -34,8 +34,7 @@ export default function About() {
         <div className="rounded-[2rem] overflow-hidden shadow-lg mb-16">
           <picture>
             <source type="image/webp" srcSet={equipmentImageVariants.webp1600} />
-            <source type="image/jpeg" srcSet={equipmentImageVariants.jpg1600} />
-            <img src={equipmentImageVariants.jpg1600} alt="Equipos profesionales" className="w-full h-auto" />
+            <img src={equipmentImageVariants.webp1600} alt="Equipos profesionales" className="responsive-image responsive-image-max" />
           </picture>
         </div>
 

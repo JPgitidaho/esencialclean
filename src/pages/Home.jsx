@@ -1,35 +1,35 @@
 import { Link } from 'react-router-dom'
 import {
-  heroImageVariants,
   sofaImageVariants,
   carpetImageVariants,
-  beforeAfterImageVariants,
+  mattressImageVariants,
+  chairsImageVariants,
 } from '../assets/images'
 
 const services = [
   {
     title: 'Limpieza de sillones',
-    description: 'Recuperamos frescura, limpieza y mejor apariencia en sillones de uso diario.',
-  },
-  {
-    title: 'Limpieza de alfombras',
-    description: 'Eliminamos suciedad acumulada, olores y manchas para renovar cada espacio.',
+    description: 'Recuperamos frescura y apariencia en sillones de uso diario.',
+    link: '/limpieza-de-sillones',
+    image: sofaImageVariants,
   },
   {
     title: 'Limpieza de colchones',
-    description: 'Mejoramos higiene y sensación de limpieza con un tratamiento profundo y cuidadoso.',
+    description: 'Mejoramos higiene con tratamiento profundo y cuidadoso.',
+    link: '/limpieza-de-colchones',
+    image: mattressImageVariants,
   },
   {
-    title: 'Limpieza de sillas y comedores',
-    description: 'Devolvemos limpieza y presentación a sillas de tela y superficies tapizadas.',
+    title: 'Limpieza de alfombras',
+    description: 'Eliminamos suciedad, olores y manchas para renovar espacios.',
+    link: '/limpieza-de-alfombras',
+    image: carpetImageVariants,
   },
   {
-    title: 'Limpieza de tapices',
-    description: 'Trabajamos distintos textiles con enfoque en cuidado, resultado y buena terminación.',
-  },
-  {
-    title: 'Sanitización y desodorización',
-    description: 'Ayudamos a dejar tus espacios con mejor aroma, frescura y sensación de higiene.',
+    title: 'Limpieza de sillas y tapices',
+    description: 'Devolvemos limpieza a sillas de tela y superficies tapizadas.',
+    link: '/limpieza-de-sillas-y-tapices',
+    image: chairsImageVariants,
   },
 ]
 
@@ -44,207 +44,204 @@ const steps = [
   {
     number: '01',
     title: 'Nos escribes',
-    description: 'Cuéntanos qué necesitas y envíanos fotos si quieres una evaluación más rápida.',
+    description: 'Cuéntanos qué necesitas y envíanos fotos si quieres.',
   },
   {
     number: '02',
     title: 'Evaluamos',
-    description: 'Revisamos el servicio ideal según el tipo de textil, estado y nivel de suciedad.',
+    description: 'Revisamos el servicio ideal según tipo y estado.',
   },
   {
     number: '03',
     title: 'Agendamos',
-    description: 'Coordinamos una visita según disponibilidad y zona de atención.',
+    description: 'Coordinamos visita según disponibilidad.',
   },
   {
     number: '04',
     title: 'Limpiamos',
-    description: 'Realizamos una limpieza profesional enfocada en buen resultado y cuidado del material.',
+    description: 'Realizamos limpieza profesional enfocada en buen resultado.',
+  },
+]
+
+const testimonials = [
+  {
+    name: 'María González',
+    text: 'Excelente servicio, mi sillón quedó como nuevo. Muy profesionales y puntuales.',
+  },
+  {
+    name: 'Carlos Rodríguez',
+    text: 'La limpieza de alfombra superó mis expectativas. Recomiendo totalmente.',
+  },
+  {
+    name: 'Ana López',
+    text: 'Servicio rápido y de calidad. Mi colchón ahora se siente fresco y limpio.',
+  },
+]
+
+const faqs = [
+  {
+    question: '¿Trabajan a domicilio?',
+    answer: 'Sí, todos nuestros servicios se realizan a domicilio.',
+  },
+  {
+    question: '¿Cuánto tiempo toma?',
+    answer: 'Entre 2-4 horas por pieza, dependiendo del tamaño.',
+  },
+  {
+    question: '¿Ofrecen garantía?',
+    answer: 'Sí, garantizamos la satisfacción con nuestros trabajos.',
   },
 ]
 
 export default function Home() {
   return (
-    <main>
-      <section 
-        className="relative overflow-hidden h-[600px] bg-gradient-to-r from-sky-600 to-cyan-500 flex items-center justify-center"
-      >
-        {/* Imagen de fondo: <picture> con WebP first */}
-        <picture className="absolute inset-0 w-full h-full block">
-          <source type="image/webp" srcSet={heroImageVariants.webp1600} />
-          <source type="image/jpeg" srcSet={heroImageVariants.jpg1600} />
-          <img src={heroImageVariants.jpg1600} alt="Limpieza profesional de sillones, alfombras y colchones" className="absolute inset-0 w-full h-full object-cover" />
-        </picture>
-
-        {/* Overlay con gradiente */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
-
-        <div className="relative z-10 mx-auto max-w-6xl px-6 w-full">
-          <div className="max-w-2xl">
-            <p className="mb-4 inline-block rounded-full bg-sky-600/90 backdrop-blur-sm px-4 py-2 text-xs md:text-sm font-semibold text-white shadow-lg">
-              ✓ Limpieza textil profesional
-            </p>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white drop-shadow-lg mb-4">
-              Renueva tus espacios con limpieza profesional
-            </h1>
-
-            <p className="text-base md:text-lg leading-7 text-white/90 drop-shadow mb-8 max-w-lg">
-              Recuperamos sillones, alfombras, colchones y tapices con resultados visibles y atención a domicilio.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/contacto"
-                className="inline-block rounded-lg bg-sky-600 hover:bg-sky-700 px-6 md:px-8 py-3 md:py-4 font-semibold text-white shadow-lg transition transform hover:scale-105 text-sm md:text-base"
-              >
-                Solicitar cotización
-              </Link>
-
-              <Link
-                to="/servicios"
-                className="inline-block rounded-lg border-2 border-white bg-transparent hover:bg-white/10 px-6 md:px-8 py-3 md:py-4 font-semibold text-white transition text-sm md:text-base"
-              >
-                Ver servicios
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Razones en el lado inferior derecho */}
-        <div className="absolute bottom-6 right-6 grid grid-cols-1 md:grid-cols-2 gap-3 max-w-sm">
-          {reasons.slice(0, 4).map((item) => (
-            <div key={item} className="rounded-lg bg-white/95 backdrop-blur-sm p-3 md:p-4 shadow-lg">
-              <p className="text-xs md:text-sm font-semibold text-slate-800 flex items-center gap-2">
-                <span className="text-sky-600 text-lg">✓</span> {item}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-            Servicios
-          </p>
-          <h2 className="mt-4 text-3xl font-bold text-slate-900 md:text-4xl">
-            Soluciones pensadas para tus espacios
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            Servicios de limpieza textil para mejorar higiene, presentación y frescura en distintos tipos de superficies.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service, index) => {
-            const serviceImages = [sofaImageVariants, carpetImageVariants, null, null, null, null]
-            return (
-              <article
-                key={service.title}
-                className="rounded-[2rem] border border-slate-200 bg-white overflow-hidden shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                {serviceImages[index] ? (
-                  <picture>
-                    <source type="image/webp" srcSet={serviceImages[index].webp800} />
-                    <source type="image/jpeg" srcSet={serviceImages[index].jpg800} />
-                    <img
-                      src={serviceImages[index].jpg800}
-                      alt={service.title}
-                      className="w-full h-48 object-cover bg-gradient-to-br from-cyan-100 to-sky-100"
-                      loading="lazy"
-                    />
-                  </picture>
-                ) : (
-                  <div className="w-full h-48 bg-gradient-to-br from-cyan-100 to-sky-100" />
-                )}
-                <div className="p-7">
-                  <h3 className="text-xl font-bold text-slate-900">{service.title}</h3>
-                  <p className="mt-4 leading-7 text-slate-600">{service.description}</p>
-                </div>
-              </article>
-            )
-          })}
-        </div>
-      </section>
-
-      <section className="bg-slate-50">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
-          <div className="rounded-[2rem] overflow-hidden shadow-lg">
-            <picture>
-              <source type="image/webp" srcSet={beforeAfterImageVariants.webp1600} />
-              <source type="image/jpeg" srcSet={beforeAfterImageVariants.jpg1600} />
-              <img src={beforeAfterImageVariants.jpg1600} alt="Antes y después de limpieza" className="w-full h-auto" />
-            </picture>
-          </div>
-
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-              Por qué elegirnos
-            </p>
-            <h2 className="mt-4 text-3xl font-bold text-slate-900 md:text-4xl">
-              Una atención enfocada en confianza, orden y buena presentación
-            </h2>
-            <p className="mt-6 max-w-xl leading-8 text-slate-600">
-              Queremos que cada servicio transmita profesionalismo desde el primer contacto hasta el resultado final, con una experiencia clara y una imagen cuidada.
-            </p>
-
-            <div className="mt-8 grid gap-5">
-              {[
-                'Atención clara y cercana',
-                'Servicio profesional a domicilio',
-                'Enfoque en limpieza profunda',
-                'Buena imagen y resultados visibles',
-              ].map((item) => (
-                <div key={item} className="rounded-[1.75rem] bg-white p-6 shadow-sm ring-1 ring-slate-100">
-                  <p className="font-semibold text-slate-800">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="mb-12 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-700">
-            Cómo trabajamos
-          </p>
-          <h2 className="mt-4 text-3xl font-bold text-slate-900 md:text-4xl">
-            Un proceso simple y profesional
-          </h2>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {steps.map((step) => (
-            <article key={step.number} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-slate-100">
-              <p className="text-sm font-bold tracking-[0.2em] text-sky-700">{step.number}</p>
-              <h3 className="mt-3 text-2xl font-bold text-slate-900">{step.title}</h3>
-              <p className="mt-4 leading-7 text-slate-600">{step.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="rounded-[2.5rem] bg-gradient-to-r from-sky-700 to-cyan-500 px-8 py-14 text-white shadow-xl md:px-14">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100">
-            Contacto
-          </p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-bold md:text-4xl">
-            Haz que tus espacios se vean más limpios, frescos y renovados
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-cyan-50">
-            Escríbenos para solicitar una cotización y conocer el servicio ideal para tu sillón, alfombra, colchón o tapiz.
-          </p>
+    <div className="container mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <section className="text-center py-16">
+        <h1 className="text-5xl font-bold text-slate-900 mb-6">
+          Limpieza Profesional de Textiles
+        </h1>
+        <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
+          Recuperamos la frescura y apariencia de tus muebles tapizados con técnicas profesionales y productos especializados.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/contacto"
-            className="mt-8 inline-block rounded-full bg-white px-7 py-3 font-semibold text-sky-700 transition hover:bg-slate-100"
+            className="bg-sky-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-sky-700 transition"
           >
-            Quiero cotizar
+            Solicitar Cotización
+          </Link>
+          <Link
+            to="/servicios"
+            className="border border-sky-600 text-sky-600 px-8 py-3 rounded-lg font-semibold hover:bg-sky-50 transition"
+          >
+            Ver Servicios
           </Link>
         </div>
       </section>
-    </main>
+
+      {/* Services Grid */}
+      <section className="py-16 bg-gradient-to-br from-white via-slate-50 to-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-16 text-slate-900">Nuestros Servicios</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="service-card group">
+                <div className="service-card-image">
+                  <picture>
+                    <source type="image/webp" srcSet={service.image.webp800} />
+                    <img
+                      src={service.image.webp800}
+                      alt={service.title}
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div className="service-card-content">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <Link
+                    to={service.link}
+                    className="service-card-link"
+                  >
+                    Más información
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">¿Por qué elegirnos?</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {reasons.map((reason, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                <div className="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-sky-600 font-bold">{index + 1}</span>
+                </div>
+                <p className="font-medium">{reason}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Nuestro Proceso</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-sky-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                  {step.number}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-slate-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Testimonios</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                <p className="text-slate-600 mb-4">"{testimonial.text}"</p>
+                <p className="font-semibold">{testimonial.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Preview */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-b border-slate-200 pb-6">
+                <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+                <p className="text-slate-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/preguntas-frecuentes"
+              className="text-sky-600 font-medium hover:text-sky-700 transition"
+            >
+              Ver todas las preguntas →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-sky-600 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">¿Listo para renovar tus muebles?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Contáctanos hoy y recibe una cotización personalizada
+          </p>
+          <Link
+            to="/contacto"
+            className="bg-white text-sky-600 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition"
+          >
+            Solicitar Cotización
+          </Link>
+        </div>
+      </section>
+    </div>
   )
 }
