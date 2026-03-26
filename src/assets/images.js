@@ -47,21 +47,21 @@ export const mattressImageVariants = {
 }
 
 export const chairsImageVariants = {
-  webp800: '/assets/tapiz 2.webp',
-  webp1600: '/assets/tapiz 2.webp',
-  jpg800: '/assets/tapiz 2.webp',
-  jpg1600: '/assets/tapiz 2.webp',
-  desktop: '/assets/tapiz 2.webp',
-  mobile: '/assets/tapiz 2.webp'
+  webp800: '/assets/tapiz 2.png',
+  webp1600: '/assets/tapiz 2.png',
+  jpg800: '/assets/tapiz 2.png',
+  jpg1600: '/assets/tapiz 2.png',
+  desktop: '/assets/tapiz 2.png',
+  mobile: '/assets/tapiz 2.png'
 }
 
 export const tapestryImageVariants = {
-  webp800: '/assets/tapiz 2.webp',
-  webp1600: '/assets/tapiz 2.webp',
-  jpg800: '/assets/tapiz 2.webp',
-  jpg1600: '/assets/tapiz 2.webp',
-  desktop: '/assets/tapiz 2.webp',
-  mobile: '/assets/tapiz 2.webp'
+  webp800: '/assets/tapiz 2.png',
+  webp1600: '/assets/tapiz 2.png',
+  jpg800: '/assets/tapiz 2.png',
+  jpg1600: '/assets/tapiz 2.png',
+  desktop: '/assets/tapiz 2.png',
+  mobile: '/assets/tapiz 2.png'
 }
 
 export const sanitizationImageVariants = {
